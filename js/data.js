@@ -317,6 +317,7 @@ window.PORTFOLIO = {
       foot_mail: "Correo",
       foot_top: "Volver arriba",
       lang_to: "EN",
+      copied: 'Correo copiado',
     },
     en: {
       nav_about: "About",
@@ -363,6 +364,7 @@ window.PORTFOLIO = {
       foot_mail: "Email",
       foot_top: "Back to top",
       lang_to: "ES",
+      copied: 'Email copied',
     },
   },
 };

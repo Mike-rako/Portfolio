@@ -520,6 +520,18 @@
     if (e.target.closest('#links a')) {
       $('#nav').classList.remove('open');
     }
+    var m = e.target.closest('a[href^="mailto:"]');
+    if (m && navigator.clipboard && matchMedia('(hover: hover)').matches) {
+      e.preventDefault();
+      var label = m.textContent;
+      navigator.clipboard
+        .writeText(m.getAttribute('href').replace('mailto:', ''))
+        .then(function () {
+          m.textContent = u('copied');
+          setTimeout(function () { m.textContent = label; }, 1800);
+        })
+        .catch(function () { window.location.href = m.href; });
+    }
   });
 
   /* Brillo que sigue al cursor sobre tarjetas y celdas */
